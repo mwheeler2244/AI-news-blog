@@ -9,7 +9,7 @@ import { TopicFilter } from "@/components/TopicFilter";
 import { Footer } from "@/components/Footer";
 import { CreateArticleModal } from "@/components/CreateArticleModal";
 import { useArticles } from "@/hooks/useArticles";
-import { type Topic, type NewArticle } from "@/types";
+import { type Topic } from "@/types";
 
 export default function HomePage() {
   const [selectedTopic, setSelectedTopic] = useState<Topic | "All">("All");
