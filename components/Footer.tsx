@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Link from "next/link";
 import { toast } from "react-toastify";
 
 export function Footer() {
@@ -145,9 +146,9 @@ export function Footer() {
               </h3>
               <ul className="space-y-2 text-center">
                 <li>
-                  <a href="/" className="text-gray-300 hover:text-white">
+                  <Link href="/" className="text-gray-300 hover:text-white">
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <a

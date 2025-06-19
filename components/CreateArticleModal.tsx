@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import { type NewArticle, type Topic } from "@/types";
 import { topics } from "@/lib/data";
 import { getImageByTopic } from "@/lib/utils";
+import Image from "next/image";
 
 interface CreateArticleModalProps {
   isOpen: boolean;
@@ -63,7 +64,7 @@ export function CreateArticleModal({
       });
       setImagePreview(null);
       onClose();
-    } catch (error) {
+    } catch {
       toast.error("Failed to create article");
     }
   };
@@ -159,9 +160,11 @@ export function CreateArticleModal({
               </label>
               {imagePreview && (
                 <div className="relative h-16 w-16 rounded-md overflow-hidden">
-                  <img
+                  <Image
                     src={imagePreview}
                     alt="Preview"
+                    width={64}
+                    height={64}
                     className="object-cover w-full h-full"
                   />
                   <button

@@ -101,7 +101,7 @@ export default function HomePage() {
     }
   };
 
-  const handleCreateArticle = (newArticle: NewArticle) => {
+  const handleCreateArticle = () => {
     // The article is already created via API, so we just need to refresh
     refetch();
   };

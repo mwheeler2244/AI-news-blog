@@ -6,7 +6,6 @@ import { ArrowLeft, Share2 } from "lucide-react";
 import { toast } from "react-toastify";
 import { type Article } from "@/types";
 import { formatDetailDate, getTopicColor } from "@/lib/utils";
-import { ArticleCard } from "./ArticleCard";
 import { mockArticles } from "@/lib/data";
 
 interface ArticleDetailProps {

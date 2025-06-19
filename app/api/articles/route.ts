@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 import { mockArticles } from "@/lib/data";
-import { type Topic } from "@/types";
 
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;
@@ -61,7 +60,7 @@ export async function POST(request: NextRequest) {
     };
 
     return NextResponse.json(article, { status: 201 });
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { error: "Failed to create article" },
       { status: 400 }
