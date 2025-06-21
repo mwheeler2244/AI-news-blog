@@ -4,15 +4,16 @@ import { ArticleDetail } from "@/components/ArticleDetail";
 import { mockArticles } from "@/lib/data";
 
 interface ArticlePageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
 export async function generateMetadata({
   params,
 }: ArticlePageProps): Promise<Metadata> {
-  const article = mockArticles.find((article) => article.id === params.id);
+  const { id } = await params;
+  const article = mockArticles.find((article) => article.id === id);
 
   if (!article) {
     return {
@@ -41,8 +42,9 @@ export async function generateMetadata({
   };
 }
 
-export default function ArticlePage({ params }: ArticlePageProps) {
-  const article = mockArticles.find((article) => article.id === params.id);
+export default async function ArticlePage({ params }: ArticlePageProps) {
+  const { id } = await params;
+  const article = mockArticles.find((article) => article.id === id);
 
   if (!article) {
     notFound();
